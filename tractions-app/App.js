@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <PaperProvider theme={MD3DarkTheme}> {/* Utilisation du thème sombre MD3 */}
+    <PaperProvider theme={MD3DarkTheme}>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
