@@ -11,7 +11,7 @@ import ProfileScreen from './../screens/ProfileScreen';
 const HomePage = () => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'tractions', title: 'Tractions', icon: 'dumbbell' }, // FontAwesome6 icon
+    { key: 'tractions', title: 'Pull-ups', icon: 'dumbbell' }, // FontAwesome6 icon
     { key: 'progression', title: 'Progression', icon: 'stats-chart' }, // Ionicons icon
     { key: 'profile', title: 'Profile', icon: 'user' }, // FontAwesome icon
   ]);

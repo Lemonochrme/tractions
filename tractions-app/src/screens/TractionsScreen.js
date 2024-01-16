@@ -1,20 +1,26 @@
 import * as React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Card, Title, Paragraph, ProgressBar } from 'react-native-paper';
+import { View, StyleSheet, ImageBackgroundComponent } from 'react-native';
+import { Card, Title, ProgressBar, Button } from 'react-native-paper';
 
 const TractionsScreen = () => {
-  const progress = 0.6;
+  const progress = 0.4;
 
   return (
+    <>
     <View style={styles.container}>
+      <Title>Welcome back!</Title>
       <Card style={styles.card}>
         <Card.Content>
-          <Title>Current Streak</Title>
-          <Paragraph>3 days</Paragraph>
           <ProgressBar progress={progress} color="orange" />
         </Card.Content>
       </Card>
     </View>
+    <View style={{ margin: 16, paddingHorizontal: 40 }}>
+      <Button icon="plus" mode="contained" onPress={() => console.log('Pressed')} buttonColor='white' >
+        Add pull-ups
+      </Button>
+    </View>
+    </>
   );
 };
 
