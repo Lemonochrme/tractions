@@ -64,14 +64,18 @@ const TractionsScreen = () => {
                 onChangeText={(text) => setInputValue(text)}
                 mode="outlined"
               />
-              <View style={{flexDirection: 'row' }}>
-                <Button mode="contained" onPress={handleAddPullups}>
-                  Add
-                </Button>
+            <View style={{flexDirection: 'row', marginTop: 10, justifyContent: 'flex-end' }}>
+              <View style={{marginRight: 10}}>
                 <Button mode="outlined" onPress={toggleModal}>
                   Cancel
                 </Button>
               </View>
+              <View>
+                <Button mode="contained" onPress={handleAddPullups}>
+                  Add
+                </Button>
+              </View>
+            </View>
             </Card.Content>
           </Card>
         </View>
