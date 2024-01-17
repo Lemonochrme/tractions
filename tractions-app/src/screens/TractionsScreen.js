@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, Modal } from 'react-native'; // Import AsyncStorage
+import { View, StyleSheet, Modal, Image } from 'react-native'; // Import AsyncStorage
 import { Card, Title, ProgressBar, Button, Text, TextInput } from 'react-native-paper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+
 const TractionsScreen = () => {
-  const [progress, setProgress] = useState(0.4);
+  const [progress, setProgress] = useState(0); // Progress bar value
   const [pullups, setPullups] = useState(0);
   const [isModalVisible, setModalVisible] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -76,14 +77,24 @@ const TractionsScreen = () => {
       <View style={styles.container}>
         <Card style={styles.card}>
           <Card.Content>
-            <Title style={{ color: 'white'}}>Goal Progression</Title>
-            <Text style={{ alignSelf: 'center', top: 10, fontSize: 20, fontWeight: 'bold', color: 'white' }}>{pullups} Pull-Ups</Text>
-            <Text style={{ fontWeight: 'bold', textAlign: 'right' }}>{(progress * 100).toFixed(1)}%</Text>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Title style={{ color: 'white'}}>Workout Progression </Title>
+                <Title style={{ fontWeight: 'bold', color: 'white' }}>{pullups}</Title>
+            </View>
+            <Text style={{ fontWeight: 'bold', textAlign: 'right', color: 'gray' }}>{(progress * 100).toFixed(1)}%</Text>
             <ProgressBar progress={progress} color="orange" />
-            <Text style={{ top: 4 }}> The taste of success is within your grasp.</Text>
+            <Text style={{ top: 4, color: 'gray' }}> The taste of success is within your grasp.</Text>
           </Card.Content>
         </Card>
       </View>
+
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', bottom: 40 }}>
+          <Image
+              source={require('./../../assets/illustration-dynamic-pose.png')} 
+              style={{ width: 500, height: 500 }}
+          />
+      </View>
+
       <View style={{ margin: 16, paddingHorizontal: 40 }}>
         <Button icon="plus" mode="contained" onPress={toggleModal} buttonColor='white'>
           Add pull-ups

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import { Card, Text } from 'react-native-paper';
-import { LineChart } from 'react-native-chart-kit';
+import { BarChart } from 'react-native-chart-kit';
 
 const ProgressionScreen = () => {
   const chartData = {
@@ -19,20 +19,19 @@ const ProgressionScreen = () => {
         <Card.Content>
           <Text style={styles.title}>Weekly Progression</Text>
           <View style={styles.chartContainer}>
-            <LineChart
+            <BarChart
               data={chartData}
-              width={Dimensions.get('window').width - 64}
+              width={Dimensions.get('window').width - 32}
               height={200}
-              withVerticalLines={false}
+              yAxisLabel=""
               chartConfig={{
                 backgroundGradientFromOpacity: 0,
                 backgroundGradientToOpacity: 0,
                 color: (opacity = 1) => `rgba(255, 165, 0, ${opacity})`,
                 labelColor: (opacity = 0.6) => `rgba(128, 128, 128, ${opacity})`,
                 decimalPlaces: 0,
-                yAxisLabel: '',
               }}
-              bezier
+              style={{ paddingLeft: 16 }}
             />
           </View>
         </Card.Content>
