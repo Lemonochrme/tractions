@@ -90,8 +90,8 @@ const TractionsScreen = () => {
 
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', bottom: 40 }}>
           <Image
-              source={require('./../../assets/illustration-dynamic-pose.png')} 
-              style={{ width: 500, height: 500 }}
+              source={require('./../../assets/illustration-pullup-male.png')} 
+              style={{ width: 400, height: 400 }}
           />
       </View>
 
